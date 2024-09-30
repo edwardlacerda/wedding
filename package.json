@@ -1,5 +1,1 @@
-{
-  "dependencies": {
-    "tailwindcss": "^3.4.13"
-  }
-}
+{"editor.defaultFormatter":"esbenp.prettier-vscode","editor.formatOnSave":true,"dependencies":{"bootstrap":"^5.3.3"}}

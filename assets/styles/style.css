@@ -1,0 +1,10 @@
+body {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgb(41, 41, 41)
+    ),
+    url("/assets/images/us.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-position: center; /* Centraliza a imagem */
+}
