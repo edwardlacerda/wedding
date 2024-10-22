@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicoly & Edward</title>
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
       rel="stylesheet"
@@ -21,21 +21,23 @@
   </head>
 
   <body>
-    <header class="p-3 m-0 border-0 bd-example m-0 border-0">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lista de Presentes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#location">Local e Data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Confirme sua Presença</a>
-        </li>
-      </ul>
+    <header class="header-bg p-3 m-0 border-0 bd-example m-0 border-0">
+      <div>
+        <ul class="nav justify-content-center p-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lista de Presentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#location">Local e Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Confirme sua Presença</a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <main class="d-flex flex-column mx-auto">
@@ -52,7 +54,7 @@
       <section class="text-center m-3">
         <div>
           <h2 class="mb-5">SOBRE O CASAL</h2>
-          <p>
+          <p class="mw-50 mx-auto">
             Tudo começou em 2016, quando Edward e Nicoly se cruzaram por acaso
             na internet. Em uma página de memes, Edward comentou algo engraçado,
             e entre tantas reações, a de Nicoly se destacou. Ele a notou, sentiu
@@ -73,8 +75,26 @@
       </section>
 
       <section class="text-center m-3">
-        <div>
-          <img src="" alt="provisório onde irá ficar o carrousel" />
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/assets/images/c1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/c2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/d3.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </section>
 
@@ -88,7 +108,6 @@
       </section>
 
       <section id="location" class="text-center m-3">
- 
         <div>
           <h2>DATA</h2>
         </div>
@@ -97,7 +116,6 @@
         </div>
       </section>
 
-      
       <section id="" class="text-center m-3">
         <div>
           <h2>LOCAL DA CERIMÔNIA:</h2>
@@ -121,15 +139,13 @@
       <section class="text-center">
         <div>
           <h2>A IGREJA</h2>
-          <img src="" alt="foto da igreja" />
+          <img src="/assets/images/igreja.png" class="d-block w-100 p-3"  alt="foto da igreja" />
         </div>
       </section>
       <footer class="d-flex flex-row p-3">
-       
-          <p class="p-3 m-0">Desenvolvido por Edward Lacerda</p>
-          <p class="p-3 m-0">contato: (11) 99469-8998</p>
-          <p class="p-3 m-0">email: elacerda28@gmail.com</p>
-        
+        <p class="p-3 m-0">Desenvolvido por Edward Lacerda</p>
+        <p class="p-3 m-0">contato: (11) 99469-8998</p>
+        <p class="p-3 m-0">email: elacerda28@gmail.com</p>
       </footer>
     </main>
     <script

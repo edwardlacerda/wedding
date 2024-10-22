@@ -1,18 +1,51 @@
-body {
-  background: linear-gradient(
+.header-bg {
+  background-image: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.979),
-      rgba(218, 216, 216, 0.205)
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0) 20%
     ),
-    url("/assets/images/us.jpg") no-repeat center center fixed;
-  background-size: contain;
+    /* Degradê no topo */
+      linear-gradient(
+        to top,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0) 38%
+      ),
+    /* Degradê na parte inferior */ url("/assets/images/cover1.jpg");
+
+  background-size: cover;
   background-position: center;
+  height: 400px; /* altura */
+  position: relative;
+  display: flex;
+  align-items: center; /* Alinha o conteúdo verticalmente */
+  justify-content: center; /* Alinha o conteúdo horizontalmente */
 }
 
+.nav {
+  z-index: 1; /* Para garantir que o nav fique acima da imagem */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
 
-
-main{
+main {
   align-items: center;
 }
 
+@media (min-width: 1200px) {
+  .mw-50 {
+    max-width: 50%;
+  }
+  iframe {
+    width: 90%; /* Reduz a largura para 90% */
+    height: 250px; /* Reduz a altura */
+    margin: 0 auto; /* Centraliza o iframe */
+  }
+}
 
+iframe {
+  width: 100%; /* Padrão: largura total no desktop */
+  height: 350px; /* Padrão: altura */
+}
