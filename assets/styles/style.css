@@ -1,3 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+.arapey-regular {
+  font-family: "Arapey", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arapey-regular-italic {
+  font-family: "Arapey", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Kapakana";
+  src: url("/assets/fonts/Kapakana[wght].ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Arapey", serif;
+  letter-spacing: 15px;
+}
+
+.nav {
+  font-family: "Arapey", serif;
+  color: black; /* Define a cor do texto como preta */
+  text-decoration: none; /* Remove o sublinhado */
+  font-size: 24px;
+}
+
+#titulo {
+  font-family: "Kapakana";
+  font-size: 60px;
+}
+
+p{
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-size: 20px;
+}
 .header-bg {
   background-image: linear-gradient(
       to bottom,
