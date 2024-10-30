@@ -45,13 +45,13 @@ p{
 .header-bg {
   background-image: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 1),
+      rgb(255, 254, 234),
       rgba(255, 255, 255, 0) 20%
     ),
     /* Degradê no topo */
       linear-gradient(
         to top,
-        rgba(255, 255, 255, 1),
+        rgb(255, 254, 234),
         rgba(255, 255, 255, 0) 38%
       ),
     /* Degradê na parte inferior */ url("/assets/images/cover1.jpg");
@@ -76,6 +76,8 @@ p{
 
 main {
   align-items: center;
+  
+  background-color:rgb(255, 254, 234)
 }
 
 @media (min-width: 1200px) {
@@ -92,4 +94,14 @@ main {
 iframe {
   width: 100%; /* Padrão: largura total no desktop */
   height: 350px; /* Padrão: altura */
+}
+
+#bf{
+  padding-left: 10px;
+  padding-top: 20px;
+  margin-left: 130px;
+}
+#bf2{
+ margin-left: 400px;
+ padding-left: 20px;
 }
