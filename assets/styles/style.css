@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
 
 .arapey-regular {
   font-family: "Arapey", serif;
@@ -27,9 +27,24 @@ h2 {
 
 .nav {
   font-family: "Arapey", serif;
-  color: black; /* Define a cor do texto como preta */
-  text-decoration: none; /* Remove o sublinhado */
+  color: black;
+  text-decoration: none;
   font-size: 24px;
+  z-index: 1; /*para o nav ficar acima da imagem*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-link {
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.nav-link:hover {
+  color: #ffffff;
 }
 
 #titulo {
@@ -37,7 +52,7 @@ h2 {
   font-size: 60px;
 }
 
-p{
+p {
   font-family: "EB Garamond";
   font-style: italic;
   font-size: 20px;
@@ -46,38 +61,28 @@ p{
   background-image: linear-gradient(
       to bottom,
       rgb(255, 254, 234),
-      rgba(255, 255, 255, 0) 20%
+      rgba(255, 255, 255, 0) 30%
     ),
-    /* Degradê no topo */
-      linear-gradient(
-        to top,
-        rgb(255, 254, 234),
-        rgba(255, 255, 255, 0) 38%
-      ),
-    /* Degradê na parte inferior */ url("/assets/images/cover1.jpg");
+    linear-gradient(to top, rgb(255, 254, 234), rgba(255, 255, 255, 0) 38%),
+    url("/assets/images/cover1.jpg");
 
   background-size: cover;
   background-position: center;
-  height: 400px; /* altura */
+  height: 500px; 
   position: relative;
   display: flex;
-  align-items: center; /* Alinha o conteúdo verticalmente */
-  justify-content: center; /* Alinha o conteúdo horizontalmente */
-}
+  align-items: center; 
+  justify-content: center; 
 
-.nav {
-  z-index: 1; /* Para garantir que o nav fique acima da imagem */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: cover;
 }
 
 main {
   align-items: center;
-  
-  background-color:rgb(255, 254, 234)
+
+  background-color: rgb(255, 254, 234);
 }
 
 @media (min-width: 1200px) {
@@ -96,12 +101,28 @@ iframe {
   height: 350px; /* Padrão: altura */
 }
 
-#bf{
-  padding-left: 10px;
+#bf {
+  padding-left: 150px;
   padding-top: 20px;
-  margin-left: 130px;
+  margin-left: 5px;
 }
-#bf2{
- margin-left: 400px;
- padding-left: 20px;
+
+.carousel-inner img {
+  max-width: 100%; /* A largura máxima será 100% do contêiner */
+  max-height: 500px; /* Defina a altura máxima que desejar */
+  object-fit: cover; /* Mantém a proporção, cortando a imagem se necessário */
+}
+
+a {
+  color: black; 
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+#igreja{
+  max-width: 100%;
+  max-height: 500px;
 }
