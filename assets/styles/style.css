@@ -133,6 +133,13 @@ a:hover {
   font-size: 20px;
   }
 
-#input{
+  #input {
+    border-radius: 5px;
+    width: 350px;
+  }
+
+#btnConfirm{
+  background-color: #fff2e8;
   border-radius: 5px;
+  width: 200px;
 }
