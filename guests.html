@@ -59,4 +59,36 @@
         </div>
     </main>  
 </body>
+<script>
+  document.getElementById("btnConfirm").addEventListener("click", async () => {
+      const inputElement = document.getElementById("input");
+      const name = inputElement.value.trim();
+  
+      if (name === "") {
+          alert("Por favor, digite seu nome!");
+          return;
+      }
+  
+      try {
+          // Faz a requisição para o backend
+          const response = await fetch(`http://localhost:3000/verificar-usuario?name=${encodeURIComponent(name)}`);
+  
+          if (!response.ok) {
+              throw new Error("Erro ao conectar com o servidor");
+          }
+  
+          const data = await response.json();
+  
+          if (data.registered) {
+              alert("Nome encontrado! Você está confirmado na lista.");
+          } else {
+              alert("Nome não encontrado. Verifique se digitou corretamente.");
+          }
+      } catch (error) {
+          console.error("Erro:", error);
+          alert("Erro ao verificar o nome. Tente novamente mais tarde.");
+      }
+  });
+  </script>
+  
 </html>
