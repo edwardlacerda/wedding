@@ -28,67 +28,81 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/styles/style.css" />
-<body>
-    <main id="main" class="d-flex flex-column mx-auto">
-        <div class="d-flex justify-content-center align-items-center text-center mb-5 mt-5">
-            <h2>CONFIRME SUA PRESENÇA</h2>
-        </div>
-    
-        <div class="mw-50 mx-auto text-center">
-            <p>
-                Agradecemos por fazer parte do nosso dia! Nossa cerimônia será reservada apenas 
-                para pessoas que enviamos com carinho. Agradecemos a compreensão!
-                Pedimos por gentileza, que escreva seu nome no espaço abaixo para confirmar sua presença
-                 e clique em "confirmar".
-            </p>
-        </div><br><br>
+  </head>
+  <body>
+    <main id="main2" class="d-flex flex-column mx-auto">
+      <div
+        class="d-flex justify-content-center align-items-center text-center m-3 mb-5 mt-5"
+      >
+        <h2>CONFIRME SUA PRESENÇA</h2>
+      </div>
 
-        <div class="mt-3 mw-50 mx-auto text-center">               
-            <input type="text" placeholder="Digite seu nome aqui!" id="input">
-        </div>
-        <div class=" mt-3">
-          <button id="btnConfirm">Confirmar</button>
-        </div>
-
-        <div class="mw-50 mx-auto text-center mt-5">
-            <p><b>DETALHES DA CELEBRAÇÃO</b> <br> Teremos uma cerimônia intimista e aconchegante na Igreja, apenas para 
-            pessoas mais próximas. Em seguida, faremos uma recepção para brindarmos juntos, 
-            com bolo e uma seleção especial de doces. Não haverá buffet completo, mas esperamos 
-            que todos aproveitem esse dia tão esperado por nós.
+      <div class="mw-50 m-3 text-center">
+        <p>
+          Agradecemos por fazer parte do nosso dia! Nossa cerimônia será
+          reservada apenas para pessoas que enviamos com carinho. Agradecemos a
+          compreensão! Pedimos por gentileza, que escreva seu nome no espaço
+          abaixo para confirmar sua presença e clique em "confirmar".
         </p>
-        </div>
-    </main>  
-</body>
-<script>
-  document.getElementById("btnConfirm").addEventListener("click", async () => {
-      const inputElement = document.getElementById("input");
-      const name = inputElement.value.trim();
-  
-      if (name === "") {
-          alert("Por favor, digite seu nome!");
-          return;
-      }
-  
-      try {
-          // Faz a requisição para o backend
-          const response = await fetch(`http://localhost:3000/verificar-usuario?name=${encodeURIComponent(name)}`);
-  
-          if (!response.ok) {
+      </div>
+      <br /><br />
+
+      <div class="mt-3 mw-50 m-3 text-center">
+        <input type="text" placeholder="Digite seu nome aqui!" id="input" />
+      </div>
+      <div class="m-1 mb-5">
+        <button id="btnConfirm">Confirmar</button>
+      </div>
+
+      <div class="m-3 text-center">
+        <h2>DETALHES DA CELEBRAÇÃO</h2>
+        <p>
+          <br />
+          Teremos uma cerimônia intimista e aconchegante na Igreja, com a
+          presença apenas de pessoas mais próximas. Após a cerimônia, faremos
+          uma recepção para brindarmos juntos, com bolo, uma seleção especial de
+          doces e canapés. Não haverá buffet completo, mas esperamos que todos
+          aproveitem esse dia tão esperado por nós
+        </p>
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("btnConfirm")
+        .addEventListener("click", async () => {
+          const inputElement = document.getElementById("input");
+          const name = inputElement.value.trim();
+
+          if (name === "") {
+            alert("Por favor, digite seu nome!");
+            return;
+          }
+
+          try {
+            // Faz a requisição para o backend
+            const response = await fetch(
+              `http://localhost:3000/verificar-usuario?name=${encodeURIComponent(
+                name
+              )}`
+            );
+
+            if (!response.ok) {
               throw new Error("Erro ao conectar com o servidor");
-          }
-  
-          const data = await response.json();
-  
-          if (data.registered) {
+            }
+
+            const data = await response.json();
+
+            if (data.registered) {
               alert("Nome encontrado! Você está confirmado na lista.");
-          } else {
+            } else {
               alert("Nome não encontrado. Verifique se digitou corretamente.");
+            }
+          } catch (error) {
+            console.error("Erro:", error);
+            alert("Erro ao verificar o nome. Tente novamente mais tarde.");
           }
-      } catch (error) {
-          console.error("Erro:", error);
-          alert("Erro ao verificar o nome. Tente novamente mais tarde.");
-      }
-  });
-  </script>
-  
+        });
+    </script>
+  </body>
 </html>
