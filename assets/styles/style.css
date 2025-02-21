@@ -20,43 +20,17 @@
   font-style: normal;
 }
 
-h2 {
-  font-family: "Arapey", serif;
-  letter-spacing: 15px;
+body {
+  overflow-x: hidden; 
+  overflow-y: auto;   
 }
 
-.nav {
-  font-family: "Arapey", serif;
-  color: black;
-  text-decoration: none;
-  font-size: 24px;
-  z-index: 1; /*para o nav ficar acima da imagem*/
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+main {
+  align-items: center;
+  overflow: hidden; 
+  background-color: rgb(255, 254, 234);
 }
 
-.nav-link {
-  color: inherit; 
-  text-decoration: none; 
-}
-
-.nav-link:hover {
-  color: #ffffff;
-}
-
-#titulo {
-  font-family: "Kapakana";
-  font-size: 60px;
-}
-
-p {
-  font-family: "EB Garamond";
-  font-style: italic;
-  font-size: 20px;
-}
 .header-bg {
   background-image: linear-gradient(
       to bottom,
@@ -79,26 +53,64 @@ p {
   object-fit: cover;
 }
 
-main {
-  align-items: center;
-
-  background-color: rgb(255, 254, 234);
+.nav {
+  font-family: "Arapey", serif;
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
+
+.nav-link {
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+h2 {
+  font-family: "Arapey", serif;
+  letter-spacing: 15px;
+}
+
+#titulo {
+  font-family: "Kapakana";
+  font-size: 60px;
+}
+
+p {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-size: 20px;
+}
+ ul {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-size: 20px;
+ }
 
 @media (min-width: 1200px) {
   .mw-50 {
     max-width: 50%;
   }
   iframe {
-    width: 90%; /* Reduz a largura para 90% */
-    height: 250px; /* Reduz a altura */
-    margin: 0 auto; /* Centraliza o iframe */
+    width: 90%;
+    height: 250px;
+    margin: 0 auto;
   }
 }
 
+
 iframe {
-  width: 100%; /* Padrão: largura total no desktop */
-  height: 350px; /* Padrão: altura */
+  width: 100%; 
+  height: 350px; 
 }
 
 #bf {
@@ -108,13 +120,13 @@ iframe {
 }
 
 .carousel-inner img {
-  max-width: 100%; /* A largura máxima será 100% do contêiner */
-  max-height: 500px; /* Defina a altura máxima que desejar */
-  object-fit: cover; /* Mantém a proporção, cortando a imagem se necessário */
+  max-width: 100%; 
+  max-height: 500px;
+  object-fit: cover;
 }
 
 a {
-  color: black; 
+  color: rgb(48, 44, 37); 
   text-decoration: none;
 }
 
