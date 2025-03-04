@@ -1,23 +1,22 @@
-require("dotenv").config(); 
+require("dotenv").config();
 
 const express = require("express");
-const mysql = require("mysql2");
+const { Client } = require("pg"); // Importando o Client do PostgreSQL
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Configuração da conexão com o banco de dados
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT
+// Configuração da conexão com o PostgreSQL
+const client = new Client({
+  connectionString: process.env.DATABASE_URL, // Usando a variável de ambiente para conexão
+  ssl: {
+    rejectUnauthorized: false // Certifique-se de que a conexão SSL está configurada corretamente
+  }
 });
 
-db.connect((err) => {
+client.connect((err) => {
   if (err) {
     console.error("Erro ao conectar ao banco de dados:", err);
     return;
@@ -42,9 +41,9 @@ app.get("/verificar-usuario", (req, res) => {
 
   const stdName = standardizeName(req.query.name);
 
-  // Consulta ao banco de dados
-  db.query(
-    'SELECT * FROM guests WHERE LOWER(REPLACE(name, " ", "")) = ?',
+  // Consulta ao banco de dados PostgreSQL
+  client.query(
+    'SELECT * FROM guests WHERE LOWER(REPLACE(name, " ", "")) = $1',
     [stdName],
     (err, results) => {
       if (err) {
@@ -52,7 +51,7 @@ app.get("/verificar-usuario", (req, res) => {
         return res.status(500).json({ error: "Erro interno no servidor" });
       }
 
-      const registered = results.length > 0;
+      const registered = results.rows.length > 0;
       res.json({ registered });
     }
   );
@@ -62,7 +61,3 @@ app.get("/verificar-usuario", (req, res) => {
 app.listen(3000, () => {
   console.log("Servidor rodando na porta 3000");
 });
-
-
-
-
