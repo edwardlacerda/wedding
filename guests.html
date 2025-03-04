@@ -81,8 +81,9 @@
 
           try {
             // Faz a requisição para o backend
+
             const response = await fetch(
-              `http://localhost:3000/verificar-usuario?name=${encodeURIComponent(
+              `https://apiguests-production.up.railway.app/verificar-usuario?name=${encodeURIComponent(
                 name
               )}`
             );
