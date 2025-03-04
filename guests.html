@@ -69,41 +69,45 @@
 
     <script>
       document
-        .getElementById("btnConfirm")
-        .addEventListener("click", async () => {
-          const inputElement = document.getElementById("input");
-          const name = inputElement.value.trim();
+  .getElementById("btnConfirm")
+  .addEventListener("click", async () => {
+    const inputElement = document.getElementById("input");
+    const name = inputElement.value.trim();
 
-          if (name === "") {
-            alert("Por favor, digite seu nome!");
-            return;
-          }
+    if (name === "") {
+      alert("Por favor, digite seu nome!");
+      return;
+    }
 
-          try {
-            // Faz a requisição para o backend
+    try {
+      // Faz a requisição POST para o backend
+      const response = await fetch(
+        `https://apiguests-production.up.railway.app/confirmar-presenca`, {
+          method: "POST", // Mudando para POST
+          headers: {
+            "Content-Type": "application/json", // Enviar JSON
+          },
+          body: JSON.stringify({ name }) // Enviar o nome como JSON
+        }
+      );
 
-            const response = await fetch(
-              `https://apiguests-production.up.railway.app/verificar-usuario?name=${encodeURIComponent(
-                name
-              )}`
-            );
+      if (!response.ok) {
+        throw new Error("Erro ao conectar com o servidor");
+      }
 
-            if (!response.ok) {
-              throw new Error("Erro ao conectar com o servidor");
-            }
+      const data = await response.json();
 
-            const data = await response.json();
+      if (data.registered) {
+        alert("Nome encontrado! Você está confirmado na lista.");
+      } else {
+        alert("Nome não encontrado. Verifique se digitou corretamente.");
+      }
+    } catch (error) {
+      console.error("Erro:", error);
+      alert("Erro ao verificar o nome. Tente novamente mais tarde.");
+    }
+  });
 
-            if (data.registered) {
-              alert("Nome encontrado! Você está confirmado na lista.");
-            } else {
-              alert("Nome não encontrado. Verifique se digitou corretamente.");
-            }
-          } catch (error) {
-            console.error("Erro:", error);
-            alert("Erro ao verificar o nome. Tente novamente mais tarde.");
-          }
-        });
     </script>
   </body>
 </html>
