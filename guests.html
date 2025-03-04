@@ -83,11 +83,11 @@
       // Faz a requisição POST para o backend
       const response = await fetch(
         `https://apiguests-production.up.railway.app/confirmar-presenca`, {
-          method: "POST", // Mudando para POST
+          method: "POST",
           headers: {
-            "Content-Type": "application/json", // Enviar JSON
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name }) // Enviar o nome como JSON
+          body: JSON.stringify({ name })
         }
       );
 
