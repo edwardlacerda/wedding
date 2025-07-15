@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libertinus+Math&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -14,6 +13,13 @@ html {
 .arapey-regular-italic {
   font-family: "Arapey", serif;
   font-weight: 400;
+  font-style: italic;
+}
+
+.libertinus-math-regular {
+  font-family: "Libertinus Math", system-ui;
+  font-weight: 400;
+  font-size: 35px;
   font-style: italic;
 }
 
@@ -86,11 +92,7 @@ h2 {
   letter-spacing: 15px;
 }
 
-h3 {
-  font-family: "EB Garamond";
-  font-style: italic;
-}
-#data{ 
+#data {
   font-size: 25px;
 }
 
