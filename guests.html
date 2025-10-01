@@ -46,7 +46,13 @@
 
       <div class="m-3 text-center">
         <h2>CONFIRME SUA PRESENÇA</h2>
-        <iframe
+        
+        <form id="formConfirmacao" class="d-flex flex-column align-items-center m-5">
+          <label class="m-3" for="nome">Digite seu nome:</label>
+          <input id="input" class="" type="text" id="nome" placeholder="Seu nome aqui" required />
+          <button class="m-3" type="submit" id="btnConfirm">Enviar</button>
+        </form>
+        <!-- <iframe
           class="mx-auto m-3 text-center"
           src="https://docs.google.com/forms/d/e/1FAIpQLSfQfYP05heDHtFi9-JzWDL_6SDWp37BsXAE4KFIQzt2qGfwFw/viewform?usp=dialog"
           width="640"
@@ -55,7 +61,7 @@
           marginheight="0"
           marginwidth="0"
           >Carregando…</iframe
-        >
+        > -->
       </div>
 
       <div class="mw-50 m-3 text-center">
@@ -69,5 +75,6 @@
         </p>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
